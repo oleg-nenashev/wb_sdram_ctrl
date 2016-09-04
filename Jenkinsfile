@@ -1,5 +1,5 @@
 def commitId = null;
-def coreName = env.JOB_BASE_NAME
+def coreName = 'wb_sdram_ctrl';
 
 stage 'Determine required patched'
 node {
@@ -19,7 +19,7 @@ node('docker-fusesoc-icarus') {
     // TODO: get rid of the name hardcode
     sh "ls -la /fusesoc/orpsoc-cores/cores/${coreName}/"
     
-  //  patchCoreSource(coreName,'oleg-nenashev',commitId)
+    patchCoreSource(coreName,'oleg-nenashev',commitId)
 
     stage "FuseSoC sim"
     try {
