@@ -2,7 +2,7 @@ def commitId = null;
 def coreName = 'wb_sdram_ctrl';
 
 stage 'Determine required patched'
-node {
+node("librecores-ci") {
     // Now we take only one repo, but maybe we need more ones later
     checkout scm
     sh 'git rev-parse HEAD > GIT_COMMIT'
