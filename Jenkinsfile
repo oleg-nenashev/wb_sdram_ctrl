@@ -23,7 +23,7 @@ node('docker-fusesoc-icarus') {
 
     stage "FuseSoC sim"
     try {
-        sh 'fusesoc sim wb_sdram_ctrl transactions=10'
+        sh 'fusesoc sim wb_sdram_ctrl --transactions 10'
     } finally {
         archiveArtifacts artifacts: 'fusesoc.log', excludes: null
     }
