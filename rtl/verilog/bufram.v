@@ -35,7 +35,7 @@ module bufram #(
 	output [31:0]		do_a,
 
 	input			clk_b,
-	input  [ADDR_WIDTH-1:0]	addr_b,
+	input  [ADDR_WIDTH:0]	addr_b,
 	input  [3:0]		we_b,
 	input  [31:0]		di_b,
 	output [31:0]		do_b
